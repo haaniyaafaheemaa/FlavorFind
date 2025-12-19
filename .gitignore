@@ -1,0 +1,10 @@
+# frontend
+recipe-finder/node_modules
+
+# backend
+backend/node_modules
+backend/.env
+
+# common
+dist
+build
