@@ -1,0 +1,299 @@
+/* -------------------------
+   Theme colors (Organic)
+   ------------------------- */
+:root{
+  --primary: #43A047;     /* herb green */
+  --primary-600: #388E3C;
+  --accent: #FF7043;      /* orange accent */
+  --muted-bg: #F1F8E9;    /* page background */
+  --card-bg: #ffffff;
+  --text: #262626;
+  --soft: rgba(0,0,0,0.06);
+  --shadow: 0 6px 18px rgba(0,0,0,0.08);
+  --glass: rgba(255,255,255,0.6);
+  --radius: 12px;
+  --gap: 16px;
+  --max-width: 1100px;
+  --container-padding: 24px;
+}
+
+/* -------------------------
+   Base / Layout
+   ------------------------- */
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--muted-bg), #ffffff 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding: 0;
+}
+
+/* center container */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* headings */
+h1{font-size:1.8rem;margin:0 0 8px 0}
+h2{font-size:1.2rem;margin:6px 0}
+h3{font-size:1rem;margin:6px 0;color:var(--primary-600)}
+
+/* -------------------------
+   Navbar
+   ------------------------- */
+.navbar{
+  background: linear-gradient(90deg, var(--card-bg), rgba(255,255,255,0.9));
+  border-bottom: 1px solid var(--soft);
+  box-shadow: var(--shadow);
+  padding: 12px 0;
+  position: sticky;
+  top:0;
+  z-index:20;
+}
+
+.navbar-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.brand{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:700;
+  color:var(--primary);
+  font-size:1.6rem;
+  text-decoration:none;
+}
+
+/* Nav items (links + buttons) */
+.nav-item {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700; 
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover {
+  background: var(--glass);
+  transform: translateY(-1px);
+}
+
+.nav-links{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* -------------------------
+   Forms / Inputs / Chips
+   ------------------------- */
+.form-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+.input {
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.08);
+  min-width:220px;
+  outline:none;
+  background: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.input:focus{ box-shadow: 0 0 0 4px rgba(67,160,71,0.06); border-color:var(--primary-600) }
+
+.chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px }
+.chip{
+  background: linear-gradient(180deg,#f3fff6,#e9f7ef);
+  border: 1px solid rgba(67,160,71,0.09);
+  padding:8px 12px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:600;
+  color:var(--primary-600);
+}
+
+.chip .x{ cursor:pointer; color:#b00020; font-weight:700; padding-left:6px; }
+
+/* -------------------------
+   Cards / Results grid
+   ------------------------- */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+  margin-top:18px;
+}
+
+.card{
+  background:var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  transition: transform .14s ease, box-shadow .14s ease;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.card:hover{ transform: translateY(-6px); box-shadow: 0 18px 36px rgba(0,0,0,0.09); }
+
+.card-media{
+  height:160px;
+  width:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.card-body{
+  padding:14px;
+}
+
+.meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+
+/* match badge */
+.badge{
+  background: linear-gradient(90deg,var(--primary-600),var(--primary));
+  color:white;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:0.85rem;
+  box-shadow: 0 6px 14px rgba(67,160,71,0.12);
+}
+
+.small-list{ list-style:none; padding:0; margin:8px 0; color:#444; }
+.small-list li{ font-size:0.95rem; padding:3px 0; }
+
+.card-actions{ display:flex; gap:8px; margin-top:10px; }
+
+/* -------------------------
+   Details page
+   ------------------------- */
+.details{
+  display:flex;
+  gap:20px;
+  margin-top:16px;
+  align-items:flex-start;
+}
+
+.details .left{
+  flex:1;
+  min-width:280px;
+}
+
+.details .right{
+  flex:1.2;
+}
+
+.missing{ color:#c62828; font-weight:700 }
+
+/* -------------------------
+   Dashboard
+   ------------------------- */
+.empty{
+  padding:40px;
+  text-align:center;
+  color:#666;
+  border:2px dashed rgba(0,0,0,0.04);
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);
+}
+
+/* -------------------------
+   Responsive tweaks
+   ------------------------- */
+@media (max-width:720px){
+  .details{ flex-direction:column }
+  .navbar-inner{ padding: 0 12px }
+}
+
+
+/* =========================
+   Pastel Button Variants
+   ========================= */
+
+/* Primary pastel button (Find Recipes / Start Searching) */
+.btn-pastel-primary {
+  background: linear-gradient(135deg, #a8e6cf, #81c784);
+  color: #1b3a2a;
+  font-weight: 700;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 20px rgba(129, 199, 132, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-pastel-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(129, 199, 132, 0.45);
+}
+
+/* Secondary pastel button (Add Ingredient) */
+.btn-pastel-secondary {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #0d47a1;
+  font-weight: 700;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 6px 16px rgba(187, 222, 251, 0.45);
+  transition: all 0.3s ease;
+}
+
+.btn-pastel-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(187, 222, 251, 0.6);
+}
+
+/* Disabled pastel button */
+.btn-pastel-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Centered input focus enhancement */
+.input {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Card soft glow */
+.soft-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+  padding: 40px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
